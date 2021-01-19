@@ -45,14 +45,14 @@ class DogCat(data.Dataset):
             else:
                 self.transforms = T.Compose([
                     T.Resize(256),
-                    T.RandomReSizedCrop(224),
+                    T.RandomResizedCrop(224),
                     T.RandomHorizontalFlip(),
                     T.ToTensor(),
                     normalize
                 ])
 
     def __getitem__(self, index):
-        """
+        """0
         一次返回一张图片的数据
         """
         img_path = self.imgs[index]
