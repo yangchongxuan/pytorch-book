@@ -23,8 +23,10 @@ class BasicModule(t.nn.Module):
         保存模型，默认使用“模型名字+时间”作为文件名
         """
         if name is None:
-            prefix = 'checkpoints/' + self.model_name + '_'
-            name = time.strftime(prefix + '%m%d_%H:%M:%S.pth')
+            prefix = r'checkpoints/' + self.model_name + '_'
+            # prefix = self.model_name + '_'
+            # name = time.strftime(prefix + '%m%d_%H:%M:%S.pth')
+            name = time.strftime(prefix + '%m%d_%H-%M-%S.pth')
         t.save(self.state_dict(), name)
         return name
 
@@ -43,3 +45,4 @@ class Flat(t.nn.Module):
 
     def forward(self, x):
         return x.view(x.size(0), -1)
+
