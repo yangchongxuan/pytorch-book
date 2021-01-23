@@ -1,7 +1,22 @@
+﻿import this
+import 
+
+# TODO help me
+# FIXME another time
+# Better Comments
+
+a     = 1
+aa    = 11
+aaa   = 11
+aaaaa = 22
+
+
+def data_get
+
 import this
-print("this")
 
-print("ycx")
+def DogCat()
+    data = pd.read_csv()
 
-@ yangchongxuan
-@ joe
+
+def data_function(file = )
