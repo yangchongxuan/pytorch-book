@@ -5,7 +5,8 @@ from torch.utils import data
 import numpy as np
 from torchvision import transforms as T
 
-
+#TODO test
+#FIXME test
 class DogCat(data.Dataset):
 
     def __init__(self, root, transforms=None, train=True, test=False):
@@ -33,7 +34,7 @@ class DogCat(data.Dataset):
 
         if transforms is None:
             normalize = T.Normalize(mean=[0.485, 0.456, 0.406],
-                                    std=[0.229, 0.224, 0.225])   # minist数据经验值 
+                                    std=[0.229, 0.224, 0.225])   #minist数据经验值 
             
             if self.test or not train:
                 self.transforms = T.Compose([
@@ -47,9 +48,10 @@ class DogCat(data.Dataset):
                     T.Resize(256),
                     T.RandomSizedCrop(224),
                     T.RandomHorizontalFlip(),
+                    T.ToTensor(),
                     normalize
                 ])
-        
+
     def __getitem__(self, index):
         """0
         一次返回一张图片数据
@@ -65,6 +67,3 @@ class DogCat(data.Dataset):
 
     def __len__(self):
         return len(self.imgs)
-
-
-var model = pd.read_csv()
