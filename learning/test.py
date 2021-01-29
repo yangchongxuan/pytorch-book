@@ -20,3 +20,12 @@ def DogCat()
 
 
 def data_function(file = )
+
+
+import pandas as pd
+import numpy as np
+
+data = pd.read_csv(r"", header=int)
+
+
+import pandas as pd
